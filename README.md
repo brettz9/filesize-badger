@@ -49,3 +49,12 @@ filesizeBadger({
     sizeColors: [['orange'], ['blue'], ['green'], ['indigo']],
 })
 ```
+
+You can pass in the above directly to the `postRender` option in [my `postRender` branch](https://github.com/brettz9/rollup-plugin-filesize/tree/postRender) of `rollup-plugin-filesize` (adding `"rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#postRender"` as a dependency).
+
+If you need this in some other environment, the call to `filesizeBadger` will
+itself return a function which should be passed:
+
+- `opts` (`showBrotliSize`, `showMinifiedSize`, and `showGzippedSize` -- if set to `false`, the corresponding panel will not be built in the badge)
+- `outputOptions` (`file` containing the file path)
+- `info` (`fileName`, `bundleSize`, `brotliSize`, `minSize`, `gzipSize`)
