@@ -32,6 +32,7 @@
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "eslint": "^6.8.0",
-    "rollup": "^2.3.3"
+    "rollup": "^2.3.3",
+    "rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#postRender-dist"
   }
 }

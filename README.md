@@ -1,6 +1,10 @@
+![filesize.svg](filesize.svg)
+
 # filesize-badger
 
 Create file size badges as for `rollup-plugin-filesize` usage.
+
+See above for a badge generated against the `dist` file for this project.
 
 ## Install
 
@@ -50,7 +54,7 @@ filesizeBadger({
 })
 ```
 
-You can pass in the above directly as the `postRender` option in [my `postRender` branch](https://github.com/brettz9/rollup-plugin-filesize/tree/postRender) of `rollup-plugin-filesize` (adding `"rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#postRender"` as a dependency).
+You can pass in the above directly as the `postRender` option in [my `postRender` branch](https://github.com/brettz9/rollup-plugin-filesize/tree/postRender-dist) of `rollup-plugin-filesize` (adding `"rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#postRender-dist"` as a dependency).
 
 If you need this in some other environment, note that the call shown above to
 `filesizeBadger` will itself return a function, and this function should be
