@@ -50,10 +50,11 @@ filesizeBadger({
 })
 ```
 
-You can pass in the above directly to the `postRender` option in [my `postRender` branch](https://github.com/brettz9/rollup-plugin-filesize/tree/postRender) of `rollup-plugin-filesize` (adding `"rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#postRender"` as a dependency).
+You can pass in the above directly as the `postRender` option in [my `postRender` branch](https://github.com/brettz9/rollup-plugin-filesize/tree/postRender) of `rollup-plugin-filesize` (adding `"rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#postRender"` as a dependency).
 
-If you need this in some other environment, the call to `filesizeBadger` will
-itself return a function which should be passed:
+If you need this in some other environment, note that the call shown above to
+`filesizeBadger` will itself return a function, and this function should be
+passed the following for the badge to be created:
 
 - `opts` (`showBrotliSize`, `showMinifiedSize`, and `showGzippedSize` -- if set to `false`, the corresponding panel will not be built in the badge)
 - `outputOptions` (`file` containing the file path)
