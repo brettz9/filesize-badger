@@ -1,0 +1,37 @@
+{
+  "name": "filesize-badger",
+  "version": "0.1.0",
+  "description": "Create file size badges as for `rollup-plugin-filesize` usage.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "eslint": "eslint .",
+    "rollup": "rollup -c",
+    "test": "npm run eslint && npm run rollup && echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brett Zamir <brettz9@yahoo.com> (http://brett-zamir.me/)",
+  "contributors": [],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "keywords": [
+    "filesize",
+    "rollup-plugin-filesize",
+    "badges"
+  ],
+  "repository": "https://github.com/brettz9/filesize-badger",
+  "homepage": "https://github.com/brettz9/filesize-badger",
+  "bugs": "https://github.com/brettz9/filesize-badger/issues",
+  "license": "MIT",
+  "dependencies": {
+    "badge-up": "^2.4.0",
+    "es6-template-strings": "^2.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "eslint": "^6.8.0",
+    "rollup": "^2.3.3"
+  }
+}
