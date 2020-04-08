@@ -8,6 +8,7 @@ function getRollupObject ({
   return {
     plugins: [
       filesize({
+        showBeforeSizes: true,
         postRender: filesizeBadger()
       })
     ],
