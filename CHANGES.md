@@ -1,5 +1,25 @@
 # CHANGES for `filesize-badger`
 
+## 0.3.0
+
+- Breaking change: Switch from default export to `rollupPluginFilesizeBadger`
+- Breaking change: Switch default `outputPath` to `filesize-badge.svg`
+- Enhancement: Add binary
+- Enhancement: Add generic programmatic export, `filesizeBadger`, which,
+    unlike the `rollup-plugin-filesize` API, accepts arguments all at once;
+    uses `rollup-plugin-filesize` defaults
+- Enhancement: Allow `fileName` to be auto-calculated by default
+    (for generic programmatic API)
+- Enhancement: Add `filesizeFormat` argument usable in place of size
+    strings (auto-calculated based on `file`)
+- Enhancement: Add `logging` option
+- Enhancement: Add `getFilesizesForCode` utility
+- Docs: Show badges (tests, coverage, licenses, alerts, npm/dependencies)
+- Docs: Show CLI usage
+- Docs: See also
+- Linting: Check hidden files and MD; apply ash-nazg
+- Testing: Add tests/coverage
+
 ## 0.2.0
 
 - Update per latest `rollup-plugin-filesize` fork API

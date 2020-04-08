@@ -1,12 +1,59 @@
-"use strict";
+'use strict';
 module.exports = {
-	env: {
-		es6: true,
-		node: true
-	},
-	extends: ["eslint:recommended"],
-	parserOptions: {
-		ecmaVersion: 2017,
-		sourceType: "module"
-	}
+  extends: ['ash-nazg/sauron-node'],
+  env: {
+    es6: true,
+    node: true
+  },
+  globals: {
+    require: 'readonly'
+  },
+  overrides: [{
+    files: '*.md',
+    globals: {
+      rollupPluginFilesizeBadgerOptions: 'readonly',
+      rollupPluginFilesizeBadger: 'readonly'
+    },
+    rules: {
+      'no-shadow': 0,
+      'no-template-curly-in-string': 0,
+      'import/unambiguous': 0,
+      'import/no-anonymous-default-export': 0,
+      'import/no-unresolved': ['error', {
+        ignore: ['filesize-badger/dist/index.esm.js']
+      }],
+      'node/no-missing-import': ['error', {
+        allowModules: ['filesize-badger']
+      }],
+      'node/no-unpublished-import': ['error', {
+        allowModules: ['rollup-plugin-filesize']
+      }]
+    }
+  }, {
+    files: [
+      'src/optionDefinitions.js', '.eslintrc.js', '.mocharc.js', 'bin/**'
+    ],
+    extends: ['plugin:node/recommended-script'],
+    rules: {
+      'no-process-exit': 0,
+      'node/exports-style': 0
+    }
+  }, {
+    files: ['test/cli.js', 'test/fixtures/sample.js'],
+    extends: ['plugin:node/recommended-script']
+  }, {
+    files: ['test/**'],
+    globals: {
+      __dirname: 'readonly',
+      expect: 'readonly'
+    },
+    env: {
+      mocha: true
+    }
+  }],
+  rules: {
+    // Disable until may get `badge-up`, `es6-template-strings`, and
+    //  `command-line-basics` deps. as modules
+    'import/no-commonjs': 0
+  }
 };

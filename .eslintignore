@@ -1,1 +1,4 @@
 dist
+!*.js
+coverage
+test/results/**

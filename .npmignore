@@ -1,0 +1,6 @@
+test
+rollup.config.js
+coverage
+.nyc_output
+.mocharc.js
+mocha-multi-reporters.json
