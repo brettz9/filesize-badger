@@ -1,5 +1,11 @@
 # CHANGES for `filesize-badger`
 
+## 0.3.1
+
+- Docs: Update description
+- Docs: Fix filesize badge
+- npm: Adjust to a current `rollup-plugin-filesize` fork
+
 ## 0.3.0
 
 - Breaking change: Switch from default export to `rollupPluginFilesizeBadger`
