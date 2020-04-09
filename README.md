@@ -18,7 +18,7 @@
 
 # filesize-badger
 
-Create file size badges as for `rollup-plugin-filesize` usage.
+Create file size badges. Also works for `rollup-plugin-filesize` usage.
 
 Here is a badge generated against the `dist` file for this project.
 

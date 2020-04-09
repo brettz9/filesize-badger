@@ -1,7 +1,7 @@
 {
   "name": "filesize-badger",
   "version": "0.3.0",
-  "description": "Create file size badges as for `rollup-plugin-filesize` usage.",
+  "description": "Create file size badges. Also works for `rollup-plugin-filesize` usage.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "bin": {

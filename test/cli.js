@@ -25,7 +25,7 @@ describe('Binary', function () {
   it('should log help', async function () {
     const {stdout} = await execFile(binFile, ['-h']);
     expect(stdout).to.contain(
-      'Create file size badges as'
+      'Create file size badges'
     );
   });
 
