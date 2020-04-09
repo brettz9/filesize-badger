@@ -22,7 +22,7 @@ Create file size badges as for `rollup-plugin-filesize` usage.
 
 Here is a badge generated against the `dist` file for this project.
 
-![filesize.svg](filesize.svg)
+![filesize-badge](filesize-badge.svg)
 
 ## Install
 
