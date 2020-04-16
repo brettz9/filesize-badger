@@ -68,12 +68,12 @@ describe('`rollupPluginFilesizeBadger`', function () {
   before(unlinker);
   after(unlinker);
 
-  it('Makes a badge through `postRender` (no arguments)', async function () {
+  it('Makes a badge through `reporter` (no arguments)', async function () {
     await build({
       input: getFixturePath('sample.js'),
       plugins: [
         fileSize({
-          postRender: rollupPluginFilesizeBadger()
+          reporter: rollupPluginFilesizeBadger()
         })
       ]
       // , ...
@@ -87,12 +87,12 @@ describe('`rollupPluginFilesizeBadger`', function () {
     expect(contents).to.equal(expected);
   });
 
-  it('Makes a badge through `postRender`', async function () {
+  it('Makes a badge through `reporter`', async function () {
     await build({
       input: getFixturePath('sample.js'),
       plugins: [
         fileSize({
-          postRender: rollupPluginFilesizeBadger({
+          reporter: rollupPluginFilesizeBadger({
             outputPath,
             // eslint-disable-next-line no-template-curly-in-string
             textTemplate: 'Rollup Plugin Filesize (${filePath})'

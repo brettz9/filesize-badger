@@ -1,5 +1,9 @@
 # CHANGES for `filesize-badger`
 
+## 0.3.2
+
+- npm: Adjust to a more up-to-date `rollup-plugin-filesize` fork
+
 ## 0.3.1
 
 - Docs: Update description

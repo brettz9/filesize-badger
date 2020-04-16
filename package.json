@@ -1,6 +1,6 @@
 {
   "name": "filesize-badger",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Create file size badges. Also works for `rollup-plugin-filesize` usage.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -82,7 +82,7 @@
     "mocha-multi-reporters": "^1.1.7",
     "nyc": "^15.0.1",
     "rollup": "^2.3.4",
-    "rollup-plugin-filesize": "git+https://github.com/brettz9/rollup-plugin-filesize.git#postRender-dist",
+    "rollup-plugin-filesize": "git+https://github.com/brettz9/rollup-plugin-filesize.git#reporter-dist",
     "typescript": "^3.8.3"
   }
 }

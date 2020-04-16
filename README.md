@@ -124,10 +124,10 @@ await filesizeBadger({
 
 ## Usage with `rollup-plugin-filesize`
 
-You can pass in a call to `rollupPluginFilesizeBadger` for the `postRender`
-option in [my `postRender` branch](https://github.com/brettz9/rollup-plugin-filesize/tree/postRender-dist)
+You can pass in a call to `rollupPluginFilesizeBadger` for the `reporter`
+option in [my `reporter` branch](https://github.com/brettz9/rollup-plugin-filesize/tree/reporter-dist)
 of `rollup-plugin-filesize` (adding
-`"rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#postRender-dist"`
+`"rollup-plugin-filesize": "https://github.com/brettz9/rollup-plugin-filesize#reporter-dist"`
 as a dependency).
 
 ```js
@@ -137,7 +137,10 @@ import {rollupPluginFilesizeBadger} from 'filesize-badger/dist/index.esm.js';
 export default {
   plugins: [
     fileSize({
-      postRender: rollupPluginFilesizeBadger()
+      reporter: rollupPluginFilesizeBadger()
+      // Or to also allow rollup-plugin-filesize default `boxen`
+      //   console reporter
+      // reporter: ["boxen", rollupPluginFilesizeBadger()]
     })
   ]
   // , ...
