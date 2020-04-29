@@ -54,7 +54,7 @@ describe('`filesizeBadger`', function () {
       await filesizeBadger({
         file: 'test/fixtures/sample.js',
         filesizeFormat: {},
-        textColor: 'orange,s{blue}',
+        textColor: ['orange', 's{blue}'],
         logging
       });
       const contents = await readFile(filesizeBadgePath, 'utf8');
@@ -178,7 +178,7 @@ describe('`filesizeBadger`', function () {
           },
           outputPath,
           sizeTypes: ['minSize', 'bundleSize'],
-          sizeColors: ['yellow', 'blue,s{white}'],
+          sizeColors: [['yellow'], ['blue', 's{white}']],
           logging
         });
         const contents = await readFile(outputPath, 'utf8');

@@ -168,9 +168,11 @@ async function filesizeBadger (cfg) {
       ? getFilesizesForCode(
         await readFile(filePath, 'utf8'),
         {
-          format: typeof filesizeFormat === 'string'
-            ? JSON.parse(filesizeFormat)
-            : filesizeFormat,
+          // Putting these lines together was apparently tripping up istanbul
+          format:
+            typeof filesizeFormat === 'string'
+              ? JSON.parse(filesizeFormat)
+              : filesizeFormat,
           showBrotliSize,
           showMinifiedSize,
           showGzippedSize
@@ -180,6 +182,7 @@ async function filesizeBadger (cfg) {
     ),
     ...cfg
   };
+
   let {
     textColor = ['navy'],
     sizeTypes = ['bundleSize', 'brotliSize', 'minSize', 'gzipSize'],
@@ -193,6 +196,7 @@ async function filesizeBadger (cfg) {
   if (typeof textColor === 'string') {
     textColor = textColor.split(',');
   }
+
   if (sizeTypes && typeof sizeTypes === 'string') {
     sizeTypes = sizeTypes.split(',');
   }

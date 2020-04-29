@@ -1,5 +1,12 @@
 # CHANGES for `filesize-badger`
 
+## 0.3.3
+
+- Docs: Update CLI help
+- Testing: Workaround istanbul issue; more type tests
+- npm: Update deps (`badge-up` and `terser`) and devDeps
+- npm: Use official `rollup-plugin-filesize` prerelease
+
 ## 0.3.2
 
 - npm: Adjust to a more up-to-date `rollup-plugin-filesize` fork
