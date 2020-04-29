@@ -17,8 +17,8 @@ function getRollupObject ({
   return {
     plugins: [
       fileSize({
-        showBeforeSizes: true,
-        reporter: rollupPluginFilesizeBadger()
+        showBeforeSizes: 'release',
+        reporter: ['boxen', rollupPluginFilesizeBadger()]
       })
     ],
     external: ['fs', 'util', 'path'],
