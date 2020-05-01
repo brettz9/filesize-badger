@@ -1,5 +1,9 @@
 # CHANGES for `filesize-badger`
 
+## ?
+
+- npm: Update terser dep. (patch) and devDeps.
+
 ## 0.3.3
 
 - Docs: Update CLI help
