@@ -140,7 +140,7 @@ export default {
       reporter: rollupPluginFilesizeBadger()
       // Or to also allow rollup-plugin-filesize default `boxen`
       //   console reporter
-      // reporter: ["boxen", rollupPluginFilesizeBadger()]
+      // reporter: ['boxen', rollupPluginFilesizeBadger()]
     })
   ]
   // , ...
