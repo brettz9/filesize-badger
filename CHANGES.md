@@ -2,6 +2,7 @@
 
 ## ?
 
+- Linting (LGTM): Add `lgtm.yml`
 - npm: Update terser dep. (patch) and devDeps.
 
 ## 0.3.3
