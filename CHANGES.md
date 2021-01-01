@@ -3,7 +3,8 @@
 ## ?
 
 - Linting (LGTM): Add `lgtm.yml`
-- npm: Update terser dep. (patch) and devDeps.
+- Testing: Switch to stable version of `mocha-multi-reporters`
+- npm: Update terser dep. (patch), package-lock, and devDeps.
 
 ## 0.3.3
 
