@@ -91,23 +91,24 @@ function getSizeText (sizeType) {
 * @property {string} file
 */
 
-/* eslint-disable max-len */
+/* eslint-disable max-len -- JSDoc */
 /**
 * @typedef {PlainObject} RollupPluginFilesizeBadger
-* @property {string} [outputPath='filesize-badge.svg']
-* @property {string} [textTemplate='File size (${filePath})']
-* @property {string} [sizeTemplate='${sizeType}: ${size}']
-* @property {string[]} [sizeTypes=['bundleSize', 'brotliSize', 'minSize', 'gzipSize']]
-* @property {string[][]} [sizeColors=[['orange'], ['blue'], ['green'], ['indigo']]]
-* @property {string[]} [textColor=['navy']]
+* @property {string} [outputPath="filesize-badge.svg"]
+* @property {string} [textTemplate="File size (${filePath})"]
+* @property {string} [sizeTemplate="${sizeType}: ${size}"]
+* @property {string[]} [sizeTypes=["bundleSize", "brotliSize", "minSize", "gzipSize"]]
+* @property {string[][]} [sizeColors=[["orange"], ["blue"], ["green"], ["indigo"]]]
+* @property {string[]} [textColor=["navy"]]
 */
-/* eslint-enable max-len */
+/* eslint-enable max-len -- JSDoc */
 
 // This should be an intersection really, not a union, but not
 //  currently available in jsdoc/Closure
 /**
  * @param {RollupPluginFilesizeBadger|RollupPluginFilesizeShowOptions
  * |RollupPluginFilesizeInfo|RollupOutputOptions} cfg
+ * @throws {TypeError}
  * @returns {Promise<void>}
  */
 async function filesizeBadger (cfg) {
@@ -128,10 +129,10 @@ async function filesizeBadger (cfg) {
 
   const {
     outputPath = 'filesize-badge.svg',
-    /* eslint-disable no-template-curly-in-string */
+    /* eslint-disable no-template-curly-in-string -- Required */
     textTemplate = 'File size (${filePath})',
     sizeTemplate = '${sizeType}: ${size}',
-    /* eslint-enable no-template-curly-in-string */
+    /* eslint-enable no-template-curly-in-string -- Required */
 
     // Output options
     file: filePath,
@@ -155,7 +156,7 @@ async function filesizeBadger (cfg) {
 
   const log = (...args) => {
     if (logging && logging !== 'off') {
-      // eslint-disable-next-line no-console
+      // eslint-disable-next-line no-console -- Logging option
       console.log(...args);
     }
   };

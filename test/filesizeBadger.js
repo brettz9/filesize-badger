@@ -94,11 +94,11 @@ describe('`filesizeBadger`', function () {
         file: 'test/fixtures/sample.js',
         filesizeFormat: {},
         showBrotliSize: true,
-        /* eslint-disable no-template-curly-in-string */
+        /* eslint-disable no-template-curly-in-string -- Required */
         textTemplate: 'File path: ${filePath}; file name: ${fileName}; ' +
           'bundle size: ${bundleSize}; brotli size: ${brotliSize}; min ' +
           'size: ${minSize}; gzip size: ${gzipSize}',
-        /* eslint-enable no-template-curly-in-string */
+        /* eslint-enable no-template-curly-in-string -- Required */
         sizeTypes: '',
         outputPath,
         textColor: 'orange,s{blue}',

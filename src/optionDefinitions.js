@@ -3,11 +3,11 @@
 const pkg = require('../package.json');
 
 // Todo: We really need a command-line-args-TO-typedef-jsdoc generator!
-/* eslint-disable jsdoc/require-property */
+/* eslint-disable jsdoc/require-property -- Use jsdoc-jsonschema? */
 /**
 * @typedef {PlainObject} FilesizeBadgerOptions
 */
-/* eslint-enable jsdoc/require-property */
+/* eslint-enable jsdoc/require-property -- Use jsdoc-jsonschema? */
 
 const getChalkTemplateSingleEscape = (s) => {
   return s.replace(/[{}\\]/gu, (ch) => {
@@ -133,7 +133,7 @@ const optionDefinitions = [
       'string to avoid such a panel; run once ' +
       'for the whole badge (the main panel); defaults to: ' +
       getChalkTemplateSingleEscape(
-        // eslint-disable-next-line no-template-curly-in-string
+        // eslint-disable-next-line no-template-curly-in-string -- Required
         '"File size (${filePath})"; passed `fileName`, `filePath`, ' +
         '`bundleSize`, `brotliSize`, `minSize`, `gzipSize; remember to '
       ) +
@@ -147,7 +147,7 @@ const optionDefinitions = [
       'used to create badge panesl for each desired individual size type. ' +
       'Defaults to: ' +
       getChalkTemplateSingleEscape(
-        // eslint-disable-next-line no-template-curly-in-string
+        // eslint-disable-next-line no-template-curly-in-string -- Required
         '"${sizeType}: ${size}"; passed `fileName`, `filePath`, ' +
         '`sizeType` (human readable title for size), `size`; '
       ) +

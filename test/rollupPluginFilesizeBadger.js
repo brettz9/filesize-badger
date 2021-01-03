@@ -28,14 +28,14 @@ async function build (inputOptions, outputOptions) {
   // create a bundle
   const bundle = await rollup(inputOptions);
 
-  // eslint-disable-next-line no-console
+  // eslint-disable-next-line no-console -- Test info
   console.log(bundle);
 
   // generate output specific code in-memory
   // you can call this function multiple times on the same bundle object
   const {output} = await bundle.generate(outputOptions);
 
-  // eslint-disable-next-line no-console
+  // eslint-disable-next-line no-console -- Test info
   console.log('output', output);
 
   await bundle.write(outputOptions);
@@ -94,7 +94,7 @@ describe('`rollupPluginFilesizeBadger`', function () {
         fileSize({
           reporter: rollupPluginFilesizeBadger({
             outputPath,
-            // eslint-disable-next-line no-template-curly-in-string
+            // eslint-disable-next-line no-template-curly-in-string -- Required
             textTemplate: 'Rollup Plugin Filesize (${filePath})'
           })
         })

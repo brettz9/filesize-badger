@@ -53,7 +53,7 @@ describe('Binary', function () {
         }
       );
       if (stderr) {
-        // eslint-disable-next-line no-console
+        // eslint-disable-next-line no-console -- Test info
         console.log('stderr', stderr);
       }
       expect(stdout).to.contain(
@@ -81,7 +81,7 @@ describe('Binary', function () {
         }
       );
       if (stderr) {
-        // eslint-disable-next-line no-console
+        // eslint-disable-next-line no-console -- Test info
         console.log('stderr', stderr);
       }
       expect(stdout).to.contain(

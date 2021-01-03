@@ -39,8 +39,14 @@ module.exports = {
       'node/exports-style': 0
     }
   }, {
-    files: ['test/cli.js', 'test/fixtures/sample.js'],
+    files: ['test/cli.js'],
     extends: ['plugin:node/recommended-script']
+  }, {
+    files: ['test/fixtures/sample.js'],
+    extends: ['plugin:node/recommended-script'],
+    rules: {
+      'eslint-comments/require-description': 0
+    }
   }, {
     files: ['test/**'],
     globals: {
@@ -49,6 +55,11 @@ module.exports = {
     },
     env: {
       mocha: true
+    }
+  }, {
+    files: ['src/index.jsdoc-properties'],
+    rules: {
+      'no-template-curly-in-string': 0
     }
   }],
   rules: {
