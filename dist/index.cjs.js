@@ -45,10 +45,10 @@ const sizeTypeMap = new Map([
  * `getData` method.
  * @param {string} code
  * @param {RollupPluginFilesizeOptions} opts
- * @returns {RollupPluginFilesizeInfo} Does not add `fileName` (nor
+ * @returns {Promise<RollupPluginFilesizeInfo>} Does not add `fileName` (nor
  * `*before` properties as used and built in `rollup-plugin-filesize`)
  */
-function getFilesizesForCode (code, opts) {
+async function getFilesizesForCode (code, opts) {
   const info = {
     bundleSize: fileSize(Buffer.byteLength(code), opts.format),
     brotliSize: opts.showBrotliSize
@@ -57,12 +57,12 @@ function getFilesizesForCode (code, opts) {
   };
 
   if (opts.showMinifiedSize || opts.showGzippedSize) {
-    const minifiedCode = terser.minify(code).code;
+    const {code: minifiedCode} = await terser.minify(code);
     info.minSize = opts.showMinifiedSize
       ? fileSize(minifiedCode.length, opts.format)
       : '';
     info.gzipSize = opts.showGzippedSize
-      ? fileSize(gzip.sync(minifiedCode), opts.format)
+      ? fileSize(await gzip(minifiedCode), opts.format)
       : '';
   }
 

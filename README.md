@@ -96,7 +96,8 @@ import {
 
 const file = 'dist/index.js';
 
-const fileSizes = getFilesizesForCode(
+(async () => {
+const fileSizes = await getFilesizesForCode(
   // Could get this by using `fs.readFile` against `file`
   'someJSCodeToMeasure();',
   {
@@ -113,7 +114,6 @@ const fileSizes = getFilesizesForCode(
   }
 );
 
-(async () => {
 await filesizeBadger({
   file,
   ...fileSizes

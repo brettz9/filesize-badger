@@ -1,10 +1,11 @@
 # CHANGES for `filesize-badger`
 
-## ?
+## 0.4.0
 
+- Breaking change: `getFilesizesForCode` now returns a `Promise`
 - Linting (LGTM): Add `lgtm.yml`
 - Testing: Switch to stable version of `mocha-multi-reporters`
-- npm: Update terser dep. (patch), package-lock, and devDeps.
+- npm: Update terser dep. (major), gzip-size (major), package-lock, and devDeps.
 
 ## 0.3.3
 
