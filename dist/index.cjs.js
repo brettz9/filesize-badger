@@ -166,7 +166,7 @@ async function filesizeBadger (cfg) {
   //  properties dynamically later
   const cfgLetObj = {
     ...(filesizeFormat
-      ? getFilesizesForCode(
+      ? await getFilesizesForCode(
         await readFile(filePath, 'utf8'),
         {
           // Putting these lines together was apparently tripping up istanbul

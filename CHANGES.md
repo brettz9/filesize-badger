@@ -3,9 +3,11 @@
 ## 0.4.0
 
 - Breaking change: `getFilesizesForCode` now returns a `Promise`
+- Docs: Update CLI docs
 - Linting (LGTM): Add `lgtm.yml`
 - Linting (ESLint): As per latest ash-nazg
 - Testing: Switch to stable version of `mocha-multi-reporters`
+- npm: Add coverage to `test` script
 - npm: Update terser dep. (major), gzip-size (major), package-lock, and devDeps.
 
 ## 0.3.3

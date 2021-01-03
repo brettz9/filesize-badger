@@ -167,7 +167,7 @@ describe('`filesizeBadger`', function () {
     );
 
     it(
-      'should work with `showMinifiedSize` disabled and `filesizeFormat`' +
+      'should work with `showMinifiedSize` disabled and `filesizeFormat` ' +
       'enabled',
       async function () {
         await filesizeBadger({
