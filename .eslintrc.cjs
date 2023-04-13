@@ -1,15 +1,18 @@
 'use strict';
+
 module.exports = {
-  extends: ['ash-nazg/sauron-node'],
+  extends: ['ash-nazg/sauron-node-overrides'],
   env: {
-    es6: true,
     node: true
+  },
+  parserOptions: {
+    ecmaVersion: 2022
   },
   globals: {
     require: 'readonly'
   },
   overrides: [{
-    files: '*.md',
+    files: '*.md/*.js',
     globals: {
       rollupPluginFilesizeBadgerOptions: 'readonly',
       rollupPluginFilesizeBadger: 'readonly'
@@ -22,25 +25,21 @@ module.exports = {
       'import/no-unresolved': ['error', {
         ignore: ['filesize-badger/dist/index.esm.js']
       }],
-      'node/no-missing-import': ['error', {
-        allowModules: ['filesize-badger']
+      'n/no-missing-import': ['error', {
+        allowModules: ['filesize-badger', 'rollup-plugin-filesize']
       }],
-      'node/no-unpublished-import': ['error', {
+      'n/no-unpublished-import': ['error', {
         allowModules: ['rollup-plugin-filesize']
       }]
     }
   }, {
     files: [
-      'src/optionDefinitions.js', '.eslintrc.js', '.mocharc.js', 'bin/**'
+      'bin/**'
     ],
-    extends: ['plugin:node/recommended-script'],
     rules: {
       'no-process-exit': 0,
       'node/exports-style': 0
     }
-  }, {
-    files: ['test/cli.js'],
-    extends: ['plugin:node/recommended-script']
   }, {
     files: ['test/fixtures/sample.js'],
     extends: ['plugin:node/recommended-script'],
@@ -50,7 +49,6 @@ module.exports = {
   }, {
     files: ['test/**'],
     globals: {
-      __dirname: 'readonly',
       expect: 'readonly'
     },
     env: {

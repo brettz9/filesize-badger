@@ -1,7 +1,10 @@
 import {readFile as rf, unlink as ul} from 'fs';
 import {promisify} from 'util';
-import {join} from 'path';
+import {join, dirname} from 'path';
+import {fileURLToPath} from 'url';
 import {filesizeBadger} from '../src/index.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const logging = 'verbose';
 

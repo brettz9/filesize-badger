@@ -1,10 +1,13 @@
 import {readFile as origReadFile, unlink as origUnlink} from 'fs';
 import {promisify} from 'util';
-import {join} from 'path';
+import {join, dirname} from 'path';
+import {fileURLToPath} from 'url';
 
 import {rollup} from 'rollup';
 import fileSize from 'rollup-plugin-filesize';
 import {rollupPluginFilesizeBadger} from '../src/index.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const readFile = promisify(origReadFile);
 const unlink = promisify(origUnlink);

@@ -1,16 +1,14 @@
-import {readFile as origReadFile, writeFile as origWriteFile} from 'fs';
-import {promisify} from 'util';
+import {readFile, writeFile} from 'fs/promises';
 import {basename} from 'path';
 
-const fileSize = require('filesize');
-const gzip = require('gzip-size');
-const terser = require('terser');
-const brotli = require('brotli-size');
-const badgeUp = require('badge-up').v2;
-const template = require('es6-template-strings');
+import {filesize as fileSize} from 'filesize';
+import {gzipSize as gzip} from 'gzip-size';
+import {minify} from 'terser';
+import brotli from 'brotli-size';
+import BadgeUp from 'badge-up';
+import template from 'es6-template-strings';
 
-const readFile = promisify(origReadFile);
-const writeFile = promisify(origWriteFile);
+const badgeUp = BadgeUp.v2;
 
 const sizeTypeMap = new Map([
   ['bundleSize', {text: 'Bundle size'}],
@@ -53,7 +51,7 @@ async function getFilesizesForCode (code, opts) {
   };
 
   if (opts.showMinifiedSize || opts.showGzippedSize) {
-    const {code: minifiedCode} = await terser.minify(code);
+    const {code: minifiedCode} = await minify(code);
     info.minSize = opts.showMinifiedSize
       ? fileSize(minifiedCode.length, opts.format)
       : '';
@@ -243,7 +241,7 @@ async function filesizeBadger (cfg) {
           fileName,
           size
         }), ...sizeColors[i]];
-      }).filter((tmplt) => tmplt)
+      }).filter(Boolean)
       : '')
   ];
 

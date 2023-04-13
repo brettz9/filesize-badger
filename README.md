@@ -96,7 +96,6 @@ import {
 
 const file = 'dist/index.js';
 
-(async () => {
 const fileSizes = await getFilesizesForCode(
   // Could get this by using `fs.readFile` against `file`
   'someJSCodeToMeasure();',
@@ -119,7 +118,6 @@ await filesizeBadger({
   ...fileSizes
   // And any other options
 });
-})();
 ```
 
 ## Usage with `rollup-plugin-filesize`

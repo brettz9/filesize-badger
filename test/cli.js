@@ -1,12 +1,12 @@
-'use strict';
-const {readFile: rf, unlink: ul} = require('fs');
-const {promisify} = require('util');
-const {join} = require('path');
-const {execFile: ef} = require('child_process');
+import {readFile, unlink} from 'fs/promises';
+import {promisify} from 'util';
+import {join, dirname} from 'path';
+import {execFile as ef} from 'child_process';
+import {fileURLToPath} from 'url';
 
-const readFile = promisify(rf);
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 const execFile = promisify(ef);
-const unlink = promisify(ul);
 
 const binFile = join(__dirname, '../bin/index.js');
 
