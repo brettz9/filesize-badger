@@ -19,13 +19,17 @@
     "cli": "./bin/index.js",
     "build-cli": "clp -c src/optionDefinitions.js cli.svg",
     "coverage-badge": "coveradge badges/coverage-badge.svg",
-    "eslint": "eslint --ext=js,md,html .",
+    "eslint": "eslint .",
     "lint": "npm run eslint",
     "mocha": "mocha --require chai/register-expect.js test/** --reporter-options configFile=mocha-multi-reporters.json",
     "test-nocov": "npm run eslint && npm run mocha",
     "test": "rm -rf node_modules/.cache && npm run eslint && c8 --all npm run mocha && npm run coverage-badge"
   },
   "c8": {
+    "exclude": [
+      "eslint.config.js",
+      "test"
+    ],
     "reporter": [
       "json-summary",
       "text"
@@ -34,7 +38,7 @@
   "author": "Brett Zamir <brettz9@yahoo.com> (http://brett-zamir.me/)",
   "contributors": [],
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "keywords": [
     "filesize",
@@ -48,44 +52,28 @@
   "dependencies": {
     "badge-up": "^3.0.0",
     "brotli-size": "^4.0.0",
-    "command-line-basics": "^1.1.0",
+    "command-line-basics": "^2.0.1",
     "es6-template-strings": "^2.0.1",
-    "filesize": "^10.0.7",
+    "filesize": "^10.1.6",
     "gzip-size": "^7.0.0",
-    "terser": "^5.16.9"
+    "terser": "^5.34.1"
   },
   "devDependencies": {
-    "@brettz9/eslint-plugin": "^1.0.4",
-    "@rollup/plugin-commonjs": "^24.1.0",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.2",
-    "c8": "^7.13.0",
-    "chai": "^4.3.7",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "c8": "^10.1.2",
+    "chai": "^5.1.1",
     "command-line-publish": "^1.1.0",
     "coveradge": "^0.8.2",
-    "eslint": "^8.38.0",
-    "eslint-config-ash-nazg": "^34.10.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-array-func": "^3.1.8",
-    "eslint-plugin-compat": "^4.1.4",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-html": "^7.1.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsdoc": "^41.1.1",
-    "eslint-plugin-markdown": "^3.0.0",
-    "eslint-plugin-no-unsanitized": "^4.0.2",
-    "eslint-plugin-no-use-extend-native": "^0.5.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-sonarjs": "^0.19.0",
-    "eslint-plugin-standard": "^4.1.0",
-    "eslint-plugin-unicorn": "^46.0.0",
+    "eslint": "^9.11.1",
+    "eslint-config-ash-nazg": "^36.19.0",
     "license-badger": "^0.21.1",
-    "mocha": "^10.2.0",
-    "mocha-badge-generator": "^0.10.6",
+    "mocha": "^10.7.3",
+    "mocha-badge-generator": "^0.11.0",
     "mocha-multi-reporters": "^1.5.1",
-    "rollup": "^3.20.2",
+    "rollup": "^4.23.0",
     "rollup-plugin-filesize": "^10.0.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.6.2"
   }
 }

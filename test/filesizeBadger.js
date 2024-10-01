@@ -2,6 +2,7 @@ import {readFile as rf, unlink as ul} from 'fs';
 import {promisify} from 'util';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
+import {expect} from 'chai';
 import {filesizeBadger} from '../src/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

@@ -85,9 +85,9 @@ function getSizeText (sizeType) {
 * @property {string} file
 */
 
-/* eslint-disable max-len -- JSDoc */
+/* eslint-disable @stylistic/max-len -- JSDoc */
 /**
-* @typedef {PlainObject} RollupPluginFilesizeBadger
+* @typedef {object} RollupPluginFilesizeBadger
 * @property {string} [outputPath="filesize-badge.svg"]
 * @property {string} [textTemplate="File size (${filePath})"]
 * @property {string} [sizeTemplate="${sizeType}: ${size}"]
@@ -95,7 +95,7 @@ function getSizeText (sizeType) {
 * @property {string[][]} [sizeColors=[["orange"], ["blue"], ["green"], ["indigo"]]]
 * @property {string[]} [textColor=["navy"]]
 */
-/* eslint-enable max-len -- JSDoc */
+/* eslint-enable @stylistic/max-len -- JSDoc */
 
 // This should be an intersection really, not a union, but not
 //  currently available in jsdoc/Closure
@@ -181,11 +181,7 @@ async function filesizeBadger (cfg) {
   let {
     textColor = ['navy'],
     sizeTypes = ['bundleSize', 'brotliSize', 'minSize', 'gzipSize'],
-    sizeColors = [['orange'], ['blue'], ['green'], ['indigo']],
-    bundleSize,
-    brotliSize,
-    minSize,
-    gzipSize
+    sizeColors = [['orange'], ['blue'], ['green'], ['indigo']]
   } = cfgLetObj;
 
   if (typeof textColor === 'string') {
@@ -200,6 +196,11 @@ async function filesizeBadger (cfg) {
       return sizeColor.split(',');
     });
   }
+
+  const {bundleSize,
+    brotliSize,
+    minSize,
+    gzipSize} = cfgLetObj;
 
   log({
     outputPath,

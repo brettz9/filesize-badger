@@ -2,6 +2,7 @@ import {readFile as origReadFile, unlink as origUnlink} from 'fs';
 import {promisify} from 'util';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
+import {expect} from 'chai';
 
 import {rollup} from 'rollup';
 import fileSize from 'rollup-plugin-filesize';
