@@ -1,5 +1,9 @@
 # CHANGES for `filesize-badger`
 
+## 0.5.0 (unreleased)
+
+- Breaking change: supply `command-line-basics` notifier info
+
 ## 0.4.0
 
 - Breaking change: `getFilesizesForCode` now returns a `Promise`
